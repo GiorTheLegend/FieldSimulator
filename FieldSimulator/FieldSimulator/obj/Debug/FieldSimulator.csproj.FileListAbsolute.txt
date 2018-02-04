@@ -1,0 +1,10 @@
+C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\bin\Debug\FieldSimulator.exe.config
+C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\bin\Debug\FieldSimulator.exe
+C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\bin\Debug\FieldSimulator.pdb
+C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\obj\Debug\FieldSimulator.csprojResolveAssemblyReference.cache
+C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\obj\Debug\FieldSimulator.Properties.Resources.resources
+C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\obj\Debug\FieldSimulator.Settings.resources
+C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\obj\Debug\FieldSimulator.csproj.GenerateResource.Cache
+C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\obj\Debug\FieldSimulator.exe
+C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\obj\Debug\FieldSimulator.pdb
+C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\obj\Debug\FieldSimulator.Field.resources
