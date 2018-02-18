@@ -12,49 +12,112 @@ namespace FieldSimulator
 {
     public partial class Settings : Form
     {
+        private PictureBox item;
+        private int value;
         public Settings()
         {
             FieldItem.Instance.OnNameChange += new OnPictureBoxChangeHandler(OnObjectChange);
             InitializeComponent();
+            this.item = null;
+            this.value = (int)MoveBy.Value;
         }
 
         private void OnObjectChange(object source)
         {
-            ItemName.Text = FieldItem.Instance.Item.Name;
+            item = FieldItem.Instance.Item;
+            ItemName.Text = item.Name;
+            UpdateProperties();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void UpdateProperties()
         {
+            if(item != null)
+            {
+                X.Text = item.Location.X.ToString();
+                Y.Text = item.Location.Y.ToString();
+                Width.Text = item.Size.Width.ToString();
+                Height.Text = item.Size.Height.ToString();
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void MoveLeft_Click(object sender, EventArgs e)
+        {
+            if(item != null)
+            {
+                if (!(item.Location.X - this.value < 0))
+                {
+                    item.Location = new Point(item.Location.X - this.value, item.Location.Y);
+                    UpdateProperties();
+                }
+            }
+        }
+
+        private void MoveUp_Click(object sender, EventArgs e)
+        {
+            if (item != null)
+            {
+                if (!(item.Location.Y - this.value < 0))
+                {
+                    item.Location = new Point(item.Location.X, item.Location.Y - this.value);
+                    UpdateProperties();
+                }
+            }
+        }
+
+        private void MoveRight_Click(object sender, EventArgs e)
+        {
+            if (item != null)
+            {
+                label1.Text = "Item X: " + item.Location.X + "\nValue: " + this.value + "\nField Width: " + Globals.field.Size.Width + "\nItem Width: " + item.Size.Width;
+                if (!(item.Location.X + this.value > Globals.field.Size.Width - item.Size.Width))
+                {
+                    
+                    item.Location = new Point(item.Location.X + this.value, item.Location.Y);
+                    UpdateProperties();
+                }
+            }
+        }
+
+        private void MoveDown_Click(object sender, EventArgs e)
+        {
+            if (item != null)
+            {
+                if (!(item.Location.Y + this.value > Globals.field.Size.Height - item.Size.Height))
+                {
+                    item.Location = new Point(item.Location.X, item.Location.Y + this.value);
+                    UpdateProperties();
+                }
+            }
+        }
+
+        private void MoveBy_ValueChanged(object sender, EventArgs e)
+        {
+            this.value = (int)MoveBy.Value;
+        }
+
+        private void ScaleFix_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Width_TextChanged(object sender, EventArgs e)
         {
-
+            item.Size = new Size(int.Parse(Width.Text), item.Size.Height);
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void Height_TextChanged(object sender, EventArgs e)
         {
-
+            item.Size = new Size(item.Size.Width, int.Parse(Height.Text));
         }
 
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        private void X_TextChanged(object sender, EventArgs e)
         {
-
+            item.Location = new Point(int.Parse(X.Text), item.Location.Y);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Y_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            item.Location = new Point(item.Location.X, int.Parse(Y.Text));
         }
     }
 }

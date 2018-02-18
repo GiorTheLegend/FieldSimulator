@@ -39,6 +39,16 @@
             this.pxLabel = new System.Windows.Forms.Label();
             this.ScaleLabel = new System.Windows.Forms.Label();
             this.ScaleFix = new System.Windows.Forms.NumericUpDown();
+            this.WidthLabel = new System.Windows.Forms.Label();
+            this.HeightLabel = new System.Windows.Forms.Label();
+            this.LocationLabel = new System.Windows.Forms.Label();
+            this.XLabel = new System.Windows.Forms.Label();
+            this.YLabel = new System.Windows.Forms.Label();
+            this.Width = new System.Windows.Forms.TextBox();
+            this.Height = new System.Windows.Forms.TextBox();
+            this.X = new System.Windows.Forms.TextBox();
+            this.Y = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.MoveBy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScaleFix)).BeginInit();
             this.SuspendLayout();
@@ -48,10 +58,8 @@
             this.ItemName.Location = new System.Drawing.Point(93, 12);
             this.ItemName.Name = "ItemName";
             this.ItemName.ReadOnly = true;
-            this.ItemName.Size = new System.Drawing.Size(100, 20);
+            this.ItemName.Size = new System.Drawing.Size(155, 20);
             this.ItemName.TabIndex = 0;
-            this.ItemName.Text = "as";
-            this.ItemName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // ItemNameLabel
             // 
@@ -70,7 +78,7 @@
             this.MoveLeft.TabIndex = 5;
             this.MoveLeft.Text = "Left";
             this.MoveLeft.UseVisualStyleBackColor = true;
-            this.MoveLeft.Click += new System.EventHandler(this.button3_Click);
+            this.MoveLeft.Click += new System.EventHandler(this.MoveLeft_Click);
             // 
             // MoveUp
             // 
@@ -80,7 +88,7 @@
             this.MoveUp.TabIndex = 6;
             this.MoveUp.Text = "Up";
             this.MoveUp.UseVisualStyleBackColor = true;
-            this.MoveUp.Click += new System.EventHandler(this.button1_Click);
+            this.MoveUp.Click += new System.EventHandler(this.MoveUp_Click);
             // 
             // MoveRight
             // 
@@ -90,7 +98,7 @@
             this.MoveRight.TabIndex = 7;
             this.MoveRight.Text = "Right";
             this.MoveRight.UseVisualStyleBackColor = true;
-            this.MoveRight.Click += new System.EventHandler(this.button2_Click);
+            this.MoveRight.Click += new System.EventHandler(this.MoveRight_Click);
             // 
             // MoveDown
             // 
@@ -100,6 +108,7 @@
             this.MoveDown.TabIndex = 8;
             this.MoveDown.Text = "Down";
             this.MoveDown.UseVisualStyleBackColor = true;
+            this.MoveDown.Click += new System.EventHandler(this.MoveDown_Click);
             // 
             // MoveBy
             // 
@@ -117,7 +126,7 @@
             0,
             0,
             0});
-            this.MoveBy.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.MoveBy.ValueChanged += new System.EventHandler(this.MoveBy_ValueChanged);
             // 
             // MoveByLabel
             // 
@@ -136,7 +145,6 @@
             this.pxLabel.Size = new System.Drawing.Size(18, 13);
             this.pxLabel.TabIndex = 12;
             this.pxLabel.Text = "px";
-            this.pxLabel.Click += new System.EventHandler(this.label4_Click);
             // 
             // ScaleLabel
             // 
@@ -174,13 +182,109 @@
             0,
             0,
             65536});
-            this.ScaleFix.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            this.ScaleFix.ValueChanged += new System.EventHandler(this.ScaleFix_ValueChanged);
+            // 
+            // WidthLabel
+            // 
+            this.WidthLabel.AutoSize = true;
+            this.WidthLabel.Location = new System.Drawing.Point(13, 191);
+            this.WidthLabel.Name = "WidthLabel";
+            this.WidthLabel.Size = new System.Drawing.Size(38, 13);
+            this.WidthLabel.TabIndex = 16;
+            this.WidthLabel.Text = "Width:";
+            // 
+            // HeightLabel
+            // 
+            this.HeightLabel.AutoSize = true;
+            this.HeightLabel.Location = new System.Drawing.Point(10, 218);
+            this.HeightLabel.Name = "HeightLabel";
+            this.HeightLabel.Size = new System.Drawing.Size(41, 13);
+            this.HeightLabel.TabIndex = 17;
+            this.HeightLabel.Text = "Height:";
+            // 
+            // LocationLabel
+            // 
+            this.LocationLabel.AutoSize = true;
+            this.LocationLabel.Location = new System.Drawing.Point(187, 165);
+            this.LocationLabel.Name = "LocationLabel";
+            this.LocationLabel.Size = new System.Drawing.Size(51, 13);
+            this.LocationLabel.TabIndex = 18;
+            this.LocationLabel.Text = "Location:";
+            // 
+            // XLabel
+            // 
+            this.XLabel.AutoSize = true;
+            this.XLabel.Location = new System.Drawing.Point(187, 185);
+            this.XLabel.Name = "XLabel";
+            this.XLabel.Size = new System.Drawing.Size(17, 13);
+            this.XLabel.TabIndex = 19;
+            this.XLabel.Text = "X:";
+            // 
+            // YLabel
+            // 
+            this.YLabel.AutoSize = true;
+            this.YLabel.Location = new System.Drawing.Point(187, 211);
+            this.YLabel.Name = "YLabel";
+            this.YLabel.Size = new System.Drawing.Size(17, 13);
+            this.YLabel.TabIndex = 20;
+            this.YLabel.Text = "Y:";
+            // 
+            // Width
+            // 
+            this.Width.Location = new System.Drawing.Point(57, 188);
+            this.Width.Name = "Width";
+            this.Width.Size = new System.Drawing.Size(36, 20);
+            this.Width.TabIndex = 21;
+            this.Width.TextChanged += new System.EventHandler(this.Width_TextChanged);
+            // 
+            // Height
+            // 
+            this.Height.Location = new System.Drawing.Point(57, 214);
+            this.Height.Name = "Height";
+            this.Height.Size = new System.Drawing.Size(36, 20);
+            this.Height.TabIndex = 22;
+            this.Height.TextChanged += new System.EventHandler(this.Height_TextChanged);
+            // 
+            // X
+            // 
+            this.X.Location = new System.Drawing.Point(212, 185);
+            this.X.Name = "X";
+            this.X.Size = new System.Drawing.Size(36, 20);
+            this.X.TabIndex = 23;
+            this.X.TextChanged += new System.EventHandler(this.X_TextChanged);
+            // 
+            // Y
+            // 
+            this.Y.Location = new System.Drawing.Point(212, 211);
+            this.Y.Name = "Y";
+            this.Y.Size = new System.Drawing.Size(36, 20);
+            this.Y.TabIndex = 24;
+            this.Y.TextChanged += new System.EventHandler(this.Y_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(187, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 52);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Value:\r\nX:\r\nField Width:\r\nItem Width:\r\n";
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Y);
+            this.Controls.Add(this.X);
+            this.Controls.Add(this.Height);
+            this.Controls.Add(this.Width);
+            this.Controls.Add(this.YLabel);
+            this.Controls.Add(this.XLabel);
+            this.Controls.Add(this.LocationLabel);
+            this.Controls.Add(this.HeightLabel);
+            this.Controls.Add(this.WidthLabel);
             this.Controls.Add(this.ScaleFix);
             this.Controls.Add(this.ScaleLabel);
             this.Controls.Add(this.pxLabel);
@@ -214,5 +318,15 @@
         private System.Windows.Forms.Label pxLabel;
         private System.Windows.Forms.Label ScaleLabel;
         private System.Windows.Forms.NumericUpDown ScaleFix;
+        private System.Windows.Forms.Label WidthLabel;
+        private System.Windows.Forms.Label HeightLabel;
+        private System.Windows.Forms.Label LocationLabel;
+        private System.Windows.Forms.Label XLabel;
+        private System.Windows.Forms.Label YLabel;
+        private System.Windows.Forms.TextBox Width;
+        private System.Windows.Forms.TextBox Height;
+        private System.Windows.Forms.TextBox X;
+        private System.Windows.Forms.TextBox Y;
+        private System.Windows.Forms.Label label1;
     }
 }

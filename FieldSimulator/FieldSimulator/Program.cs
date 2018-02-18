@@ -17,7 +17,7 @@ namespace FieldSimulator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MultiFormContext(new Field(), new Settings()));
+            Application.Run(new MultiFormContext(new Field(), new Settings(), new Control()));
         }
     }
 

@@ -8,3 +8,4 @@ C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\obj\Debug\FieldSimulator.csp
 C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\obj\Debug\FieldSimulator.exe
 C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\obj\Debug\FieldSimulator.pdb
 C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\obj\Debug\FieldSimulator.Field.resources
+C:\Users\Gior\Desktop\FieldSimulator\FieldSimulator\obj\Debug\FieldSimulator.Control.resources
